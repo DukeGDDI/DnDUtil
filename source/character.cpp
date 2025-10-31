@@ -22,7 +22,6 @@ Character::Character() : characterName("Unnamed"),
     proficiencyBonus(2),
     passivePerception(10) {
         initializeAbilities();
-
 }
 
 Character::Character(string charName, 

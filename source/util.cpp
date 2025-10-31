@@ -1,8 +1,8 @@
+#include "util.hpp"
 #include <random>
 #include <string>
 
 using namespace std;
-
 // Function to generate a random UUID-like string
 string get_uuid() {
     static random_device dev;

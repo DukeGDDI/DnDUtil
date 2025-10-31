@@ -4,7 +4,22 @@
 #include "types.hpp"
 #include "equipment.hpp"
 
+#ifndef CHARACTER_HPP
+#define CHARACTER_HPP
+
 using namespace std;
+
+struct Abilities {
+    int strength;
+    int dexterity;
+    int constitution;
+    int intelligence;
+    int wisdom;
+    int charisma;
+};
+
+// Overload the << operator for Abilities
+std::ostream& operator<<(std::ostream& os, const Abilities& abilities);
 
 class Character {
 
@@ -29,7 +44,6 @@ public:
     int passivePerception;
 
     Abilities abilities;
-    SavingThrows savingThrows;
     vector<Equipment*> inventory;
     vector<Weapon*> equippedWeapons;
     vector<Armor*> equippedArmor;
@@ -44,10 +58,7 @@ public:
 
     ~Character();
 
-    // Add to purse
-    Coin& addCoin(const Coin& amount);
-    // Remove from purse
-    Coin& spendCoin(const Coin& amount);
+    
     // Method to equip a weapon
     void equipWeapon(Weapon* weapon);
     // Un-equip a weapon
@@ -65,3 +76,4 @@ private:
     void initializeAbilities();
 
 };
+#endif // CHARACTER_HPP

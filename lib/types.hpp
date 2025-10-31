@@ -1,6 +1,8 @@
 #include <iostream>
 #include <string>
 
+#ifndef TYPES_HPP
+#define TYPES_HPP
 enum class ClassType {
     BARBARIAN,
     BARD,
@@ -47,31 +49,35 @@ enum Alignment {
     NEUTRAL_EVIL,
     CHAOTIC_EVIL
 };
-
 // Overload the << operator for Alignment
 std::ostream& operator<<(std::ostream& os, Alignment alignment);
 
-
-struct Abilities {
-    int strength;
-    int dexterity;
-    int constitution;
-    int intelligence;
-    int wisdom;
-    int charisma;
+enum DamageType {
+    SLASHING,
+    PIERCING,
+    BLUDGEONING,
+    FIRE,
+    COLD,
+    LIGHTNING,
+    ACID,
+    POISON,
+    NECROTIC,
+    RADIANT,
+    THUNDER,
+    FORCE,
+    PSYCHIC
 };
 
-// Overload the << operator for Abilities
-std::ostream& operator<<(std::ostream& os, const Abilities& abilities);
+// Overload the << operator for DamageType
+std::ostream& operator<<(std::ostream& os, DamageType type);
 
-struct SavingThrows {
-    bool strength;
-    bool dexterity;
-    bool constitution;
-    bool intelligence;
-    bool wisdom;
-    bool charisma;
+enum ArmorType {
+    UNARMORED,
+    LIGHT,
+    MEDIUM,
+    HEAVY,
+    SHIELD
 };
 
-// Overload the << operator for SavingThrows
-std::ostream& operator<<(std::ostream& os, const SavingThrows& savingThrows);
+std::ostream& operator<<(std::ostream& os, ArmorType type);
+#endif // TYPES_HPP
