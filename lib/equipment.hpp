@@ -41,7 +41,6 @@ public:
 };
 
 
-
 // Weapon class derived from Equipment
 class Weapon : public Equipment {
 public:
@@ -82,4 +81,6 @@ public:
     }
 
     static vector<Weapon> getAllWeapons();
+
+    static Weapon getWeaponById(const string& id);
 };
